@@ -46,6 +46,7 @@ public class AppointmentController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+    //update appointment info
     @PutMapping("/update/{id}")
     public ResponseEntity<Appointment> updateAppointment(@PathVariable("id") Long id, @RequestBody Appointment appointment) {
         Optional<Appointment> appointmentOptional = appointmentRepository.findById(id);
@@ -55,5 +56,6 @@ public class AppointmentController {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
 
 }
